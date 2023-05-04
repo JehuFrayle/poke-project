@@ -1,6 +1,8 @@
 # PokeProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Although I am a big fan of Pokemon, I recently realized that I have never done anything with the Poke API. Therefore, I am currently trying to utilize Angular to build an application that makes use of this API. It is an exciting challenge for me as I will have the opportunity to integrate my passion for Pokemon with my programming skills, and also to learn more about Angular in the process.
+
+This project was made using the Angular CLI.
 
 ## Development server
 
