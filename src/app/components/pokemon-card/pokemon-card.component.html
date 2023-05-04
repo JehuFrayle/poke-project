@@ -1,0 +1,6 @@
+<article>
+    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+index+'.png'" [alt]="this.pokemon.name"
+    width="60%">
+    <p class="name">{{this.pokemon.name | capitalize}}</p>
+    <p>{{this.index | pokemonNumber}}</p>
+</article>
