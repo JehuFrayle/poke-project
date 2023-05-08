@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+show = false;
+showMenu(){
+  this.show = !this.show;
+}
 }

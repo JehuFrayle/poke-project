@@ -1,0 +1,68 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+        margin: 1rem;
+
+        animation: scaling 2s ease-in-out infinite;
+        h1 {
+            font-weight: bold;
+            color: azure;
+            font-size: 3rem;
+        }
+        p {
+            font-weight: bold;
+            color: azure;
+            font-size: 1.3rem;
+        }
+    }
+    app-pokemon-card {
+        margin: 2rem;
+        width: min(100%, 300px);
+
+        animation: floating 2s ease-in-out infinite;
+    }
+    @keyframes floating {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-.5rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    @keyframes scaling {
+        0% {
+            transform: scale(100%);
+        }
+        50% {
+            transform: scale(99%);
+        }
+        100% {
+            transform: scale(100%);
+        }
+    }
+    //disable animations on prefer reduced motion
+    @media (prefers-reduced-motion: reduce) {
+        section {
+            div {
+                animation: none;
+            }
+            app-pokemon-card {
+                animation: none;
+            }
+        }
+    }
+}

@@ -23,6 +23,10 @@ export class PokemonCardComponent {
     this.pokemonService.getOnePokemon(this.pokemon).subscribe((pokemon) => {
       this.types.push(pokemon.types[0].type);
       pokemon.types[1] ? this.types.push(pokemon.types[1].type) : null;
+
+      if(this.pokemon.name === ''){
+        this.pokemon.name = pokemon.name;
+      }
     });
   }
 }
