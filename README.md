@@ -1,8 +1,19 @@
-# PokeProject
+# Poke-Project
 
 Although I am a big fan of Pokemon, I recently realized that I have never done anything with the Poke API. Therefore, I am currently trying to utilize Angular to build an application that makes use of this API. It is an exciting challenge for me as I will have the opportunity to integrate my passion for Pokemon with my programming skills, and also to learn more about Angular in the process.
 
 This project was made using the Angular CLI.
+
+## Design
+I used a color palette based on the Pokemon Volcarona with some variations for shadows and details.
+ 
+ <span style="color: black; background-color:#626262; padding:5px">#626262</span>
+ <span style="color: black; background-color:#E6E6E6; padding:5px;">#E6E6E6</span>
+ <span style="color: black; background-color:#DE5C45; padding:5px">#DE5C45</span>
+ <span style="color: black; background-color:#94CDD5; padding:5px">#94CDD5</span>
+ <span style="color: black; background-color:#52949C; padding:5px">#52949C</span>
+
+<img src="https://64.media.tumblr.com/tumblr_m8yvzytvqc1qmiefs.png" alt="Color palette from tumblr" style="display:block;margin: 0 auto; border-radius: 10px"></img>
 
 ## Development server
 

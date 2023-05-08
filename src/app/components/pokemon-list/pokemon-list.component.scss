@@ -20,14 +20,14 @@ section {
         padding: .5rem 1rem;
         border-radius: 5px;
         border: none;
-        background-color: #C7A008;
-        color: #1B356A;
+        background-color: #de5c45;
+        color: azure;
         font-weight: bold;
         cursor: pointer;
         transition: all 200ms linear;
         &:hover {
             transform: scale(110%);
-            filter: drop-shadow(#C7A008 0 0 5px);
+            filter: drop-shadow(azure 0 0 5px);
         }
     }
 }

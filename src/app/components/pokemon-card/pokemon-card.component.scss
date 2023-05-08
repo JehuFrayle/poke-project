@@ -1,9 +1,10 @@
 :host {
     text-align: center;
     font-weight: 300;
+    filter: drop-shadow(#323232 0 0 2px);
 }
 article {
-    background-color: #3A5DA9;
+    background-color: #e6e6e6;
     width: 100%;
     padding: .5rem;
     border-radius: 10px;
@@ -23,5 +24,27 @@ article {
             transform: scale(150%);
             filter: drop-shadow(rgb(252,204,4, 1) 0 0 5px);
         }
+    }
+
+    .typesContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: start;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 5px;
+    }
+    .numberContainer {
+        display: flex;
+        background-color: #94CDD5;
+        font-family: 'Monda', sans-serif;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px;
+        border-radius: 5px;
+        gap: 10px;
     }
   }

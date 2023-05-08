@@ -1,0 +1,18 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { ColorByType, Type2 } from 'src/app/models/pokemon.model';
+
+@Component({
+  selector: 'app-type-icon',
+  templateUrl: './type-icon.component.html',
+  styleUrls: ['./type-icon.component.scss']
+})
+export class TypeIconComponent implements OnInit {
+  @Input() type!: Type2;
+  typeColor = ColorByType.fire;
+  ngOnInit(): void {
+    //Get index by the type name
+    const index = Object.keys(ColorByType).indexOf(this.type.name);
+    //Get the color by the index
+    this.typeColor = Object.values(ColorByType)[index];
+  }
+}
