@@ -387,3 +387,23 @@ export interface Pokemon {
     steel: "#B8B8D0",
     water: "#6890F0"
   }
+  export const IconByType = {
+    bug: "assets/types-icons/bug.png",
+    dark: "assets/types-icons/dark.png",
+    dragon: "assets/types-icons/dragon.png",
+    electric: "assets/types-icons/electric.png",
+    fairy: "assets/types-icons/fairy.png",
+    fighting: "assets/types-icons/fighting.png",
+    fire: "assets/types-icons/fire.png",
+    flying: "assets/types-icons/flying.png",
+    ghost: "assets/types-icons/ghost.png",
+    grass: "assets/types-icons/grass.png",
+    ground: "assets/types-icons/ground.png",
+    ice: "assets/types-icons/ice.png",
+    normal: "assets/types-icons/normal.png",
+    poison: "assets/types-icons/poison.png",
+    psychic: "assets/types-icons/psychic.png",
+    rock: "assets/types-icons/rock.png",
+    steel: "assets/types-icons/steel.png",
+    water: "assets/types-icons/water.png"
+  }

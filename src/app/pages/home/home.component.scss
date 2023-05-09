@@ -13,7 +13,7 @@ section {
         text-align: center;
         gap: 1rem;
         margin: 1rem;
-
+        filter: drop-shadow(#323232 5px 0 2px);
         animation: scaling 2s ease-in-out infinite;
         h1 {
             font-weight: bold;

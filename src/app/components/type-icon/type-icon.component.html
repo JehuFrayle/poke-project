@@ -1,4 +1,7 @@
-<p [ngStyle]="{
+<div [ngStyle]="{
     'background-color': typeColor || 'white',
     'filter': 'drop-shadow({{typeColor}} 0 0 5px);'
-}"> {{type.name | uppercase}}</p>
+}">
+    <img [src]="typeIcon" alt="{{type.name}} icon" width="24px" height="24px">
+    <p> {{type.name | uppercase}}</p>
+</div>

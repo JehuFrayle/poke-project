@@ -8,13 +8,14 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1.5rem;
     margin: 1rem;
+    margin-top: 0;
     justify-content: center;
 }
 .buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 1rem;
+    margin-bottom: 2rem;
     button {
         margin: 0 .5rem;
         padding: .5rem 1rem;
@@ -29,5 +30,13 @@ section {
             transform: scale(110%);
             filter: drop-shadow(azure 0 0 5px);
         }
+    }
+}
+@media screen and (max-width: 768px) {
+    :host{
+        padding: 2rem 3rem;
+    }
+    section {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }

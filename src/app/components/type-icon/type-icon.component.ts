@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ColorByType, Type2 } from 'src/app/models/pokemon.model';
+import { ColorByType, IconByType, Type2 } from 'src/app/models/pokemon.model';
 
 @Component({
   selector: 'app-type-icon',
@@ -9,10 +9,14 @@ import { ColorByType, Type2 } from 'src/app/models/pokemon.model';
 export class TypeIconComponent implements OnInit {
   @Input() type!: Type2;
   typeColor = ColorByType.fire;
+  typeIcon = IconByType.bug;
   ngOnInit(): void {
     //Get index by the type name
-    const index = Object.keys(ColorByType).indexOf(this.type.name);
+    const indexColor = Object.keys(ColorByType).indexOf(this.type.name);
     //Get the color by the index
-    this.typeColor = Object.values(ColorByType)[index];
+    this.typeColor = Object.values(ColorByType)[indexColor];
+
+    const indexIcon = Object.keys(IconByType).indexOf(this.type.name);
+    this.typeIcon = Object.values(IconByType)[indexIcon];
   }
 }
