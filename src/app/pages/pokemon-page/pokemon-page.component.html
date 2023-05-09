@@ -1,1 +1,7 @@
-<app-pokemon-list></app-pokemon-list>
+<div class="typeSelector">
+    <p>Filter by type</p>
+    <div class="typesContainer">
+        <app-type-icon *ngFor="let type of allTypes" [type]="type" (click)="filterPokemon(type)"></app-type-icon>
+    </div>
+</div>
+<app-pokemon-list [pokemonList]="this.pokemonList"></app-pokemon-list>

@@ -13,11 +13,14 @@ article {
     img {
         transition: all 300ms linear;
     }
-    .name {
+    .name{
         font-weight: bold;
+        text-decoration: none;
+        color: inherit;
     }
     &:hover {
         transform: scale(110%);
+        cursor: pointer;
 
         img{
             transform: scale(150%);

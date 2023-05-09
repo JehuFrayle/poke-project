@@ -1,0 +1,30 @@
+.typeSelector {
+    margin: 1rem 2rem;
+
+    p {
+        margin: 0 auto;
+        width: 100%;
+        color: #e2e2e2;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .typesContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: start;
+        flex-wrap: wrap;
+        gap: .5rem;
+        margin: 1rem auto;
+
+        app-type-icon {
+            max-width: 150px;
+            transition: all 200ms ease-in-out;
+            filter: drop-shadow(#323232 0 0 2px);
+            &:hover {
+                transform: scale(110%);
+                cursor: pointer;
+            }
+        }
+    }
+}

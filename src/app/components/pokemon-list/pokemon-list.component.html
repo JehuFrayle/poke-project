@@ -1,7 +1,7 @@
 <section>
-    <app-pokemon-card *ngFor="let poke of pokemonList?.results" [pokemon]="poke"></app-pokemon-card>
+    <app-pokemon-card *ngFor="let poke of pokemonList" [pokemon]="poke"></app-pokemon-card>
 </section>
-<div class="buttons">
+<!-- <div class="buttons">
     <button (click)="previousPage()" [disabled]="!pokemonList?.previous">Previous</button>
     <button (click)="nextPage()" [disabled]="!pokemonList?.next">Next</button>
-</div>
+</div> -->

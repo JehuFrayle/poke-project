@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PokemonList, PokemonSimplified } from 'src/app/models/pokemon.model';
+import { Component, Input, OnInit } from '@angular/core';
+import {  PokemonSimplified } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -8,40 +8,40 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent implements OnInit {
-  pokemonList: PokemonList | null = null;
+  @Input() pokemonList: PokemonSimplified[] | null = null;
   loading: boolean = false;
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.loading = true;
-    this.pokemonService.getPokemonList().subscribe((data) => {
-      this.pokemonList = data;
-      this.loading = false;
-    }, (error) => {
-      console.error(error);
-    });
+    // this.loading = true;
+    // this.pokemonService.getPokemonList().subscribe((data) => {
+    //   this.pokemonList = data;
+    //   this.loading = false;
+    // }, (error) => {
+    //   console.error(error);
+    // });
   }
-  previousPage() {
-    this.loading = true;
-    this.pokemonService.getPreviousPage(this.pokemonList!).subscribe((data) => {
-      this.pokemonList = data;
-      this.loading = false;
-    }, (error) => {
-      console.error(error)
-    });
-    // Goes to top of page.
-    window.scrollTo(0, 0);
-  }
-  nextPage() {
-    this.loading = true;
-    this.pokemonService.getNextPage(this.pokemonList!).subscribe((data) => {
-      this.pokemonList = data;
-      this.loading = false;
-    }, (error) => {
-      console.error(error);
-    });
-    // Goes to top of page.
-    window.scrollTo(0, 0);
-  }
+  // previousPage() {
+  //   this.loading = true;
+  //   this.pokemonService.getPreviousPage(this.pokemonList!).subscribe((data) => {
+  //     this.pokemonList = data.results;
+  //     this.loading = false;
+  //   }, (error) => {
+  //     console.error(error)
+  //   });
+  //   // Goes to top of page.
+  //   window.scrollTo(0, 0);
+  // }
+  // nextPage() {
+  //   this.loading = true;
+  //   this.pokemonService.getNextPage(this.pokemonList!).subscribe((data) => {
+  //     this.pokemonList = data;
+  //     this.loading = false;
+  //   }, (error) => {
+  //     console.error(error);
+  //   });
+  //   // Goes to top of page.
+  //   window.scrollTo(0, 0);
+  // }
 }
