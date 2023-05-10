@@ -1,22 +1,76 @@
+:host {
+    position: relative;
+}
 .typeSelector {
     margin: 1rem 2rem;
+    background: azure;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 200px;
+    z-index: 1;
+    position: absolute;
+    transition: all 200ms ease-in-out;
 
+    &:hover {
+        cursor: pointer;
+    }
     p {
         margin: 0 auto;
         width: 100%;
-        color: #e2e2e2;
+        color: #626262;
         font-size: 1.2em;
         font-weight: bold;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        svg {
+            transition: all 200ms ease-in-out;
+            &.active {
+                transform: rotate(180deg);
+            }
+        }
     }
     .typesContainer {
-        display: flex;
-        flex-direction: row;
+        display: none;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: start;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: .5rem;
-        margin: 1rem auto;
+        margin: 1rem auto 0 0;
+        padding: 1rem;
+        max-height: 300px;
+        max-width: 100%;
+        overflow-y: scroll;
 
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            border: none;
+            max-width: 150px;
+            font-family: 'Monda', sans-serif;
+            font-size: small;
+            font-weight: bold;
+
+            color:#626262;
+            text-decoration: none;
+            height: 32px;
+            border-radius: 16px;
+            padding: 4px;
+            padding-right: 12px;
+
+            transition: all 200ms ease-in-out;
+            filter: drop-shadow(#323232 0 0 2px);
+            &:hover {
+                transform: scale(110%);
+                cursor: pointer;
+            }
+        }
         app-type-icon {
             max-width: 150px;
             transition: all 200ms ease-in-out;
@@ -26,5 +80,11 @@
                 cursor: pointer;
             }
         }
+        &.active {
+            display: flex;
+        }
     }
+}
+app-pokemon-list {
+    margin-top: 3rem;
 }

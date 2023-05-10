@@ -24,10 +24,22 @@ export class PokemonPageComponent implements OnInit {
     this.pokemonService.getAllTypes().subscribe((types) => {
       this.allTypes = types.results;
     });
+
+    //toggle types if open
+    if(document.querySelector('.typesContainer')?.classList.contains('active')){
+      this.typeToggle();
+    }
   }
+
   filterPokemon(type: Type2){
     this.pokemonService.getPokemonListByType(type.name).subscribe((pokemonList) => {
       this.pokemonList = pokemonList.pokemon.map((pokemon) => pokemon.pokemon); //Get the pokemon simplified of each pokemon with type slot
     });
+    this.typeToggle();
+  }
+
+  typeToggle(){
+    document.querySelector('.typesContainer')?.classList.toggle('active');
+    document.querySelector('p > svg')?.classList.toggle('active');
   }
 }
