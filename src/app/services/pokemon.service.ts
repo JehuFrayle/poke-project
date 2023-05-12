@@ -37,4 +37,7 @@ export class PokemonService {
   getAllTypes(){
     return this.http.get<TypeList>(`https://pokeapi.co/api/v2/type?limit=18`);
   }
+  searchPokemonByName(query:string){
+    return this.http.get<PokemonSimplified[]>(`https://pokemon-searcher.jehufrayle.com/index.php?name=${query}`);
+  }
 }

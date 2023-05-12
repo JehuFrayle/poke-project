@@ -1,8 +1,9 @@
 :host {
     position: relative;
 }
+
 .typeSelector {
-    margin: 1rem 2rem;
+    margin: 4rem 1rem;
     background: azure;
     padding: 1rem;
     border-radius: 5px;
@@ -14,6 +15,7 @@
     &:hover {
         cursor: pointer;
     }
+
     p {
         margin: 0 auto;
         width: 100%;
@@ -28,11 +30,13 @@
 
         svg {
             transition: all 200ms ease-in-out;
+
             &.active {
                 transform: rotate(180deg);
             }
         }
     }
+
     .typesContainer {
         display: none;
         flex-direction: column;
@@ -40,7 +44,7 @@
         align-items: start;
         flex-wrap: nowrap;
         gap: .5rem;
-        margin: 1rem auto 0 0;
+        margin: .5rem 0;
         padding: 1rem;
         max-height: 300px;
         max-width: 100%;
@@ -50,41 +54,120 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 8px;
+            background: none;
             border: none;
             max-width: 150px;
             font-family: 'Monda', sans-serif;
             font-size: small;
             font-weight: bold;
 
-            color:#626262;
+            color: #626262;
             text-decoration: none;
             height: 32px;
             border-radius: 16px;
             padding: 4px;
-            padding-right: 12px;
+            padding-left: 0;
 
             transition: all 200ms ease-in-out;
-            filter: drop-shadow(#323232 0 0 2px);
+
             &:hover {
                 transform: scale(110%);
                 cursor: pointer;
             }
         }
+
         app-type-icon {
             max-width: 150px;
             transition: all 200ms ease-in-out;
-            filter: drop-shadow(#323232 0 0 2px);
+
             &:hover {
                 transform: scale(110%);
                 cursor: pointer;
             }
         }
+
         &.active {
             display: flex;
         }
     }
 }
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    max-width: 80%;
+    margin: 1rem auto;
+    border-radius: 18px;
+    justify-content: flex-start;
+    background-color: #E6E6E6;
+    filter: drop-shadow(#323232 0 0 2px);
+    padding: 0 1rem;
+    gap: 1rem;
+
+    .searchIcon {
+        display: inline-flex;
+        cursor: pointer;
+    }
+
+    input[type="search"] {
+        border: none;
+        background: none;
+        width: 70%;
+        height: 36px;
+        font-family: 'Raleway', sans-serif;
+        z-index: 2;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        max-width: 50%;
+    }
+}
+
 app-pokemon-list {
-    margin-top: 3rem;
+    margin-top: 4rem;
+}
+.notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+
+    p {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #E6E6E6;
+        filter: drop-shadow(#323232 0 0 2px);
+        animation: breath 4s ease-in-out infinite;
+        max-width: 90%;
+        text-align: center;
+
+        @keyframes breath {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+    img {
+        width: 10%;
+
+        @media screen and (max-width: 768px) {
+            width: 40%;
+        }
+    }
 }

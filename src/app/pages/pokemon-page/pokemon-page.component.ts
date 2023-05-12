@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonSimplified, Type2 } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-pokemon-page',
@@ -10,6 +11,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class PokemonPageComponent implements OnInit {
   allTypes:Type2[] = [];
   pokemonList: PokemonSimplified[] = [];
+  searchTerm: string = '';
+  notFound: boolean = false;
 
   constructor(private pokemonService: PokemonService) { }
   ngOnInit(): void {
@@ -38,8 +41,28 @@ export class PokemonPageComponent implements OnInit {
     this.typeToggle();
   }
 
+  showType = false;
   typeToggle(){
-    document.querySelector('.typesContainer')?.classList.toggle('active');
-    document.querySelector('p > svg')?.classList.toggle('active');
+    this.showType = !this.showType;
+  }
+
+  searchPokemon(){
+    if(this.showType) this.typeToggle();
+    
+    if(this.searchTerm === ''){
+      this.ngOnInit();
+      this.notFound = false;
+      return;
+    }
+    this.pokemonService.searchPokemonByName(this.searchTerm)
+    .subscribe((results) => {
+      console.log(results);
+      this.pokemonList = results;
+      this.notFound = false;
+    }, (error) => {
+      console.log(error.error.text);
+      this.pokemonList = [];
+      this.notFound = true;
+    });
   }
 }

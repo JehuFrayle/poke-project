@@ -9,6 +9,19 @@ div {
     align-items: center;
     border-radius: 16px;
     padding: 4px 5px;
+    
+
+    &.noBackground {
+        gap: 4px;
+        background: none;
+        padding: 0;
+        padding-right: 4px;
+        filter: none;
+
+        p {
+            color: #626262;
+        }
+    }
 }
 p {
     color:azure;

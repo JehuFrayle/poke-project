@@ -14,6 +14,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PokemonPageComponent } from './pages/pokemon-page/pokemon-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OnepokemonpageComponent } from './pages/onepokemon-page/onepokemon-page.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { OnepokemonpageComponent } from './pages/onepokemon-page/onepokemon-page
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
   ],

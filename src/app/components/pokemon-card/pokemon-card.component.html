@@ -18,6 +18,6 @@
         [alt]="this.pokemon?.name" width="60%" (error)="useDefaultImage($event)" />
     <p class="name">{{this.pokemon?.name | capitalize}}</p>
     <div class="typesContainer">
-        <app-type-icon *ngFor="let type of types" [type]="type"></app-type-icon>
+        <app-type-icon *ngFor="let type of types" [type]="type" [background]="true"></app-type-icon>
     </div>
 </article>

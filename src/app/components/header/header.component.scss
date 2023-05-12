@@ -18,22 +18,24 @@
         filter: drop-shadow(#323232 0px 0px 2px);
 
         &.logo {
-            transform: rotate(-5deg);
             transition: all 0.2s ease-in-out;
-
+            font-family: 'Monda', sans-serif;
             &:hover {
                 animation: shake 0.2s ease-in-out 2;
                 cursor: pointer;
             }
             @keyframes shake {
                 0% {
-                    transform: rotate(-5deg);
+                    transform: rotate(0deg);
                 }
-                50% {
+                33% {
                     transform: rotate(5deg);
                 }
-                100% {
+                67% {
                     transform: rotate(-5deg);
+                }
+                100% {
+                    transform: rotate(0deg);
                 }
             }
         }
