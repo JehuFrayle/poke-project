@@ -15,6 +15,9 @@ import { PokemonPageComponent } from './pages/pokemon-page/pokemon-page.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { OnepokemonpageComponent } from './pages/onepokemon-page/onepokemon-page.component'
 import { FormsModule } from '@angular/forms';
+import { LoadingPokeballComponent } from './components/loading-pokeball/loading-pokeball.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PokemonPageComponent,
     FooterComponent,
-    OnepokemonpageComponent
+    OnepokemonpageComponent,
+    LoadingPokeballComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

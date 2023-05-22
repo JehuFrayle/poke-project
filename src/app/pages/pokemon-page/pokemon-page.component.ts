@@ -45,7 +45,11 @@ export class PokemonPageComponent implements OnInit {
   typeToggle(){
     this.showType = !this.showType;
   }
-
+  activeSearchBar = false;
+  searchBarToggle(){
+    this.activeSearchBar = !this.activeSearchBar;
+  }
+  
   searchPokemon(){
     if(this.showType) this.typeToggle();
     

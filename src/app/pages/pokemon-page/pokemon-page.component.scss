@@ -4,7 +4,7 @@
 
 .typeSelector {
     margin: 4rem 1rem;
-    background: azure;
+    background: #E6E6E6;
     padding: 1rem;
     border-radius: 5px;
     width: 200px;
@@ -128,11 +128,22 @@
     @media screen and (min-width: 768px) {
         max-width: 50%;
     }
+
+    &:hover {
+        background-color: #F6F6F6;
+        filter: drop-shadow(#323232 0 0 4px);
+    }
+
+    &.active {
+        background-color: #F6F6F6;
+        filter: drop-shadow(#323232 0 0 4px);
+    }
 }
 
 app-pokemon-list {
     margin-top: 4rem;
 }
+
 .notFound {
     display: flex;
     flex-direction: column;
@@ -155,14 +166,17 @@ app-pokemon-list {
             0% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.1);
             }
+
             100% {
                 transform: scale(1);
             }
         }
     }
+
     img {
         width: 10%;
 
