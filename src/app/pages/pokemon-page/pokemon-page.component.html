@@ -32,7 +32,7 @@
         </svg>
     </span>
     <input type="search" placeholder="Search by name" [(ngModel)]="searchTerm" (ngModelChange)="searchPokemon()"
-    (focus)="searchBarToggle()" (blur)="searchBarToggle"  />
+    (focus)="searchBarToggle()" (blur)="searchBarToggle()"  />
 </section>
 <app-pokemon-list [pokemonList]="this.pokemonList"></app-pokemon-list>
 <section class="notFound" *ngIf="this.notFound">
