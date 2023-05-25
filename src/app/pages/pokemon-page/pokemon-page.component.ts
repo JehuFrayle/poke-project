@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { debounceTime, fromEvent, map } from 'rxjs';
 import { PokemonSimplified, Type2 } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
@@ -14,7 +15,8 @@ export class PokemonPageComponent implements OnInit {
   searchTerm: string = '';
   notFound: boolean = false;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService,
+    private title: Title) { }
   ngOnInit(): void {
     this.initialPokemonList();
     this.pokemonService.getAllTypes().subscribe((types) => {
@@ -35,9 +37,13 @@ export class PokemonPageComponent implements OnInit {
         console.log(error);
       }
     );
+    this.title.setTitle('All pokémon');
+    if(this.showType) this.typeToggle();
   }
   filterPokemon(type: Type2) {
     this.pokemonService.getPokemonListByType(type.name).subscribe((pokemonList) => {
+      const typeName = type.name.charAt(0).toUpperCase() + type.name.slice(1);
+      this.title.setTitle(`${typeName} pokémon`);
       this.pokemonList = pokemonList.pokemon.map((pokemon) => pokemon.pokemon); //Get the pokemon simplified of each pokemon with type slot
     });
     this.typeToggle();
