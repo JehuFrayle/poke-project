@@ -14,10 +14,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { PokemonPageComponent } from './pages/pokemon-page/pokemon-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OnepokemonpageComponent } from './pages/onepokemon-page/onepokemon-page.component'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingPokeballComponent } from './components/loading-pokeball/loading-pokeball.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { DescriptionsComponent } from './components/descriptions/descriptions.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,15 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     PokemonPageComponent,
     FooterComponent,
     OnepokemonpageComponent,
-    LoadingPokeballComponent
+    LoadingPokeballComponent,
+    DescriptionsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}

@@ -18,15 +18,12 @@ export class PokemonCardComponent {
 
   ngOnInit(): void {
     if(this.pokemon === null){
-      console.log('Suscribing to currentPokemon$...');
       this.pokemonCollection.currentPokemon$.subscribe((pokemon) => {
         this.pokemon = pokemon;
         this.updatePokemon();
       });
       return;
     }
-
-    console.log('receive a simplified pokemon')
     const urlParts = (this.pokemon as PokemonSimplified).url.split('/');
     this.index = parseInt(urlParts[urlParts.length - 2]);
 
@@ -43,7 +40,6 @@ export class PokemonCardComponent {
 
   updatePokemon(){
     if((this.pokemon as Pokemon).types){
-      console.log('receive a whole pokemon');
 
       this.index = (this.pokemon as Pokemon).id;
       this.types = []; //Reset types

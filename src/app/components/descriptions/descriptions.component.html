@@ -1,0 +1,6 @@
+<div class="descriptionsWrapper">
+    <article *ngFor="let desc of descriptions">
+        <h2>{{desc.version.name | capitalize}}</h2>
+        <p>{{desc.flavor_text}}</p>
+    </article>
+</div>

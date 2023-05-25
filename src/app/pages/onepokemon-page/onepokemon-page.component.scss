@@ -1,9 +1,36 @@
 :host {
     display: flex;
     width: 100%;
+    flex-direction: column;
+    margin-bottom: 60px;
     
     .cardContainer {
         margin: 2rem auto;
-        width: 20%;
+        width: 80%;
+    }
+    app-descriptions {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+// media query for tablet and above
+@media (min-width: 768px) {
+    :host {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 2rem 4rem;
+        justify-content: start;
+        gap: 2rem;
+        .cardContainer {
+            width: 100%;
+            margin: 0;
+            grid-column: 1 / 2;
+        }
+        app-descriptions {
+            width: 100%;
+            margin: 0;
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+        }
     }
 }
