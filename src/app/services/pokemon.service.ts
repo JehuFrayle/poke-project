@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pokemon, PokemonList, PokemonSimplified, TypeList, TypeResult } from '../models/pokemon.model';
+import { PokemonSpecies } from '../models/pokemon-species.model';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,9 @@ export class PokemonService {
   }
   searchPokemonByName(query:string){
     return this.http.get<PokemonSimplified[]>(`https://pokemon-searcher.jehufrayle.com/index.php?name=${query}`);
+  }
+
+  getPokemonSpecies(pokemon: Pokemon){
+    return this.http.get<PokemonSpecies>(pokemon.species.url);
   }
 }

@@ -19,6 +19,7 @@ import { LoadingPokeballComponent } from './components/loading-pokeball/loading-
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { DescriptionsComponent } from './components/descriptions/descriptions.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DescriptionsComponent } from './components/descriptions/descriptions.co
     FooterComponent,
     OnepokemonpageComponent,
     LoadingPokeballComponent,
-    DescriptionsComponent
+    DescriptionsComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

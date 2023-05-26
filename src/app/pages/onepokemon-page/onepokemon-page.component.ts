@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { PokemonCollectionService } from 'src/app/services/pokemon-collection.service';
 import { Title } from '@angular/platform-browser';
+import { Pokemon } from 'src/app/models/pokemon.model';
+import { PokemonSpecies } from 'src/app/models/pokemon-species.model';
 
 @Component({
   selector: 'app-onepokemonpage',
@@ -11,8 +13,8 @@ import { Title } from '@angular/platform-browser';
 })
 export class OnepokemonpageComponent implements OnInit {
   //Get pokemon number by url
-  pokemonNumber = 0;
-  pokemonName = '';
+  pokemon: Pokemon = {} as Pokemon;
+  species: PokemonSpecies = {} as PokemonSpecies;
 
   constructor(private route: ActivatedRoute, 
     private pokemonService: PokemonService, 
@@ -21,10 +23,10 @@ export class OnepokemonpageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      Number(params['id']) ? this.pokemonNumber = Number(params['id']) : this.pokemonName = params['id'];
+      Number(params['id']) ? this.pokemon.id = Number(params['id']) : this.pokemon.name = params['id'];
     });
 
-    this.pokemonService.getPokemonByNumber(this.pokemonNumber || this.pokemonName).subscribe(
+    this.pokemonService.getPokemonByNumber(this.pokemon.id || this.pokemon.name).subscribe(
       (pokemon) => {
         console.log(pokemon);
         this.pokemonCollection.setCurrentPokemon(pokemon);

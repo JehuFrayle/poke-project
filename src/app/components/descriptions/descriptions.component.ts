@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { FlavorTextEntry } from 'src/app/models/pokemon-species.model';
+import { PokemonCollectionService } from 'src/app/services/pokemon-collection.service';
 
 @Component({
   selector: 'app-descriptions',
@@ -7,17 +8,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./descriptions.component.scss']
 })
 export class DescriptionsComponent implements OnInit {
-  
-    constructor(private http:HttpClient) { }
-  
-    ngOnInit(): void {
-      this.http.get('https://pokeapi.co/api/v2/pokemon-species/132/').subscribe(results => {
-        const descriptions: any[] = (results as any).flavor_text_entries;
-        this.descriptions = descriptions.filter(description => description.language.name === 'en');
-        console.log(this.descriptions);
-      }, error => {
-        console.log('Error', error);
+
+  constructor(private pokemonCollection: PokemonCollectionService) { }
+
+  descriptions: FlavorTextEntry[] = [];
+  initialDescription:FlavorTextEntry[] = [{ flavor_text: 'We couldnt find any description for this pokémon.', language: { name: '', url: '' }, version: { name: 'So sorry!', url: '' } }];  ngOnInit(): void {
+    this.pokemonCollection.getCurrentPokemonSpecies().subscribe(
+      (species) => {
+        if (species.flavor_text_entries) {
+          this.descriptions = species.flavor_text_entries.filter((description: any) => description.language.name === 'en');
+        }
+      }, (error) => {
+        console.log(error);
+        this.descriptions = this.initialDescription;
       });
-    }
-    descriptions: any[] = [];
+  }
 }

@@ -14,7 +14,7 @@
         </svg>
         <p>{{this.index | pokemonNumber}}</p>
     </div>
-    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+index+'.png'"
+    <img [src]="this.pokemonImgSRC"
         [alt]="this.pokemon?.name" width="60%" (error)="useDefaultImage($event)" />
     <p class="name">{{this.pokemon?.name | capitalize}}</p>
     <div class="typesContainer">

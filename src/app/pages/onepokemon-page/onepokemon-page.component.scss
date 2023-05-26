@@ -3,12 +3,18 @@
     width: 100%;
     flex-direction: column;
     margin-bottom: 60px;
+    gap: 1rem;
     
     .cardContainer {
-        margin: 2rem auto;
+        margin: 0 auto;
+        margin-top: 2rem;
         width: 80%;
     }
     app-descriptions {
+        width: 80%;
+        margin: 0 auto;
+    }
+    app-summary {
         width: 80%;
         margin: 0 auto;
     }
@@ -25,6 +31,12 @@
             width: 100%;
             margin: 0;
             grid-column: 1 / 2;
+        }
+        app-summary {
+            width: 100%;
+            margin: 0;
+            grid-column: 2 / 4;
+            grid-row: 1 / 2;
         }
         app-descriptions {
             width: 100%;
