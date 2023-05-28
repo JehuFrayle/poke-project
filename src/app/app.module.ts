@@ -20,6 +20,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { DescriptionsComponent } from './components/descriptions/descriptions.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { StatBarComponent } from './components/stat-bar/stat-bar.component';
+import { StatPipe } from './pipes/stat.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SummaryComponent } from './components/summary/summary.component';
     OnepokemonpageComponent,
     LoadingPokeballComponent,
     DescriptionsComponent,
-    SummaryComponent
+    SummaryComponent,
+    StatBarComponent,
+    StatPipe
   ],
   imports: [
     BrowserModule,

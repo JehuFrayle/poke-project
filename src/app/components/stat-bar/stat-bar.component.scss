@@ -1,0 +1,33 @@
+.statsContainer {
+    font-size: 1rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .stat {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        .statName {
+            text-align: left;
+            grid-column: 1 / 2;
+        }
+        .statBase {
+            grid-column: 2 / 3;
+            text-align: right;
+        }
+        .statBar {
+            grid-column: 3 / 5;
+            display: block;
+            height: 12px;
+        }
+    }
+}

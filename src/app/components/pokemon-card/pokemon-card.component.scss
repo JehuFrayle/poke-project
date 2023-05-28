@@ -10,6 +10,13 @@ article {
     border-radius: 10px;
     text-align: center;
     transition: all 200ms linear;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
     img {
         transition: all 300ms linear;
     }
@@ -17,13 +24,14 @@ article {
         font-weight: bold;
         text-decoration: none;
         color: inherit;
+        font-size: 1.2rem;
     }
-    &:hover {
+    &.hoverable:hover {
         transform: scale(110%);
         cursor: pointer;
 
         img{
-            transform: scale(150%);
+            transform: scale(125%);
             filter: drop-shadow(#7AFFFF 0 0 5px);
         }
     }
@@ -36,9 +44,11 @@ article {
         flex-wrap: wrap;
         gap: .5rem;
         margin-top: 15px;
+        align-self: flex-start;
     }
     .numberContainer {
         display: flex;
+        width: 100%;
         background-color: #94CDD5;
         font-family: 'Monda', sans-serif;
         flex-direction: row;

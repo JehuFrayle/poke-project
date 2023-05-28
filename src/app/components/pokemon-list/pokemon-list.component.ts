@@ -14,34 +14,5 @@ export class PokemonListComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    // this.loading = true;
-    // this.pokemonService.getPokemonList().subscribe((data) => {
-    //   this.pokemonList = data;
-    //   this.loading = false;
-    // }, (error) => {
-    //   console.error(error);
-    // });
   }
-  // previousPage() {
-  //   this.loading = true;
-  //   this.pokemonService.getPreviousPage(this.pokemonList!).subscribe((data) => {
-  //     this.pokemonList = data.results;
-  //     this.loading = false;
-  //   }, (error) => {
-  //     console.error(error)
-  //   });
-  //   // Goes to top of page.
-  //   window.scrollTo(0, 0);
-  // }
-  // nextPage() {
-  //   this.loading = true;
-  //   this.pokemonService.getNextPage(this.pokemonList!).subscribe((data) => {
-  //     this.pokemonList = data;
-  //     this.loading = false;
-  //   }, (error) => {
-  //     console.error(error);
-  //   });
-  //   // Goes to top of page.
-  //   window.scrollTo(0, 0);
-  // }
 }

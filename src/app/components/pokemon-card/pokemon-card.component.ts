@@ -10,6 +10,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonCardComponent {
   @Input() pokemon!: PokemonSimplified | Pokemon | null;
+  @Input() hoverable = true;
+  
   index = 0;
   types: Type2[] = [];
   defaultImage = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'
@@ -19,7 +21,7 @@ export class PokemonCardComponent {
 
   ngOnInit(): void {
     if (this.pokemon === null) {
-      this.pokemonCollection.currentPokemon$.subscribe((pokemon) => {
+      this.pokemonCollection.getCurrentPokemon().subscribe((pokemon) => {
         this.pokemon = pokemon;
         this.updatePokemon();
       });

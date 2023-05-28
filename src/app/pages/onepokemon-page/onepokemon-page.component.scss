@@ -24,9 +24,10 @@
     :host {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 2rem 4rem;
+        padding: 1rem 4rem;
         justify-content: start;
-        gap: 2rem;
+        gap: 1rem;
+
         .cardContainer {
             width: 100%;
             margin: 0;
@@ -43,6 +44,33 @@
             margin: 0;
             grid-column: 1 / 4;
             grid-row: 2 / 3;
+        }
+    }
+}
+@media (min-width: 1024px) {
+    :host {
+        padding: 1rem 6rem;
+        gap: 1rem;
+        .cardContainer {
+            width: 100%;
+            margin: 0;
+            grid-column: 1 / 2;
+        }
+        app-summary {
+            width: 100%;
+            margin: 0;
+            grid-column: 2 / 4;
+            grid-row: 1 / 2;
+
+            font-size: 1.1rem;
+        }
+        app-descriptions {
+            width: 100%;
+            margin: 0;
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+
+            font-size: 1.1rem;
         }
     }
 }

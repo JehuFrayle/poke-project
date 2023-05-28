@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonSpecies } from 'src/app/models/pokemon-species.model';
-import { Pokemon } from 'src/app/models/pokemon.model';
+import { Pokemon, Stat } from 'src/app/models/pokemon.model';
 import { PokemonCollectionService } from 'src/app/services/pokemon-collection.service';
 
 @Component({
@@ -19,6 +19,7 @@ export class SummaryComponent implements OnInit {
   height = 0;
   weight = 0;
   genderRate:string[] = [];
+  pokemonColor = '#94CDD5';
 
   ngOnInit(): void {
     this.pokemonCollection.getCurrentPokemonIsShiny().subscribe((isShiny) => {
@@ -28,6 +29,7 @@ export class SummaryComponent implements OnInit {
       this.pokemonSpecies = species;
       this.genus = species.genera.filter((genus) => genus.language.name === 'en')[0].genus;
       this.genderRate = this.getGenderRate(species.gender_rate);
+      this.pokemonColor = species.color.name;
     });
     this.pokemonCollection.getCurrentPokemon().subscribe((pokemon) => {
       this.pokemon = pokemon;
@@ -35,6 +37,7 @@ export class SummaryComponent implements OnInit {
       this.weight = pokemon.weight;
     });
   }
+
   setShiny() {
     console.log(this.isShiny);
     if(this.isShiny){
@@ -43,6 +46,7 @@ export class SummaryComponent implements OnInit {
     }
     this.pokemonCollection.setCurrentPokemonIsShiny(true);
   }
+  
   getGenderRate(eight:number){
     let result = [];
     if(eight === -1){
@@ -50,7 +54,7 @@ export class SummaryComponent implements OnInit {
     } else {
       const femaleRatio = 100 * (eight / 8);
       const maleRatio = 100 - femaleRatio;
-      result = [`Male: ${maleRatio}%`, `Female: ${femaleRatio}%`];
+      result = [`${maleRatio}%`, `${femaleRatio}%`];
     }
     return result;
   }

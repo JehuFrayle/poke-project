@@ -11,12 +11,12 @@ export class PokemonCollectionService {
 
   constructor(private pokemonService: PokemonService) { }
   private currentPokemon = new BehaviorSubject<Pokemon>({} as Pokemon);
-  currentPokemon$ = this.currentPokemon.asObservable();
+  private currentPokemon$ = this.currentPokemon.asObservable();
   private currentPokemonIsShiny = new BehaviorSubject<boolean>(false);
-  currentPokemonIsShiny$ = this.currentPokemonIsShiny.asObservable();
+  private currentPokemonIsShiny$ = this.currentPokemonIsShiny.asObservable();
 
   private currentPokemonSpecies = new BehaviorSubject<PokemonSpecies>({} as PokemonSpecies);
-  currentPokemonSpecies$ = this.currentPokemonSpecies.asObservable();
+  private currentPokemonSpecies$ = this.currentPokemonSpecies.asObservable();
 
   getCurrentPokemon(){
     return this.currentPokemon$;
@@ -34,6 +34,7 @@ export class PokemonCollectionService {
         this.currentPokemonSpecies.next(species);
       }
     );
+    this.currentPokemonIsShiny.next(false);
   }
   setCurrentPokemonIsShiny(isShiny: boolean){
     this.currentPokemonIsShiny.next(isShiny);

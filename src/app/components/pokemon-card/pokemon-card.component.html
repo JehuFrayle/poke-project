@@ -1,4 +1,4 @@
-<article routerLink="/pokemon/{{this.index}}">
+<article routerLink="/pokemon/{{this.index}}" [ngClass]="{'hoverable': hoverable}">
     <div class="numberContainer">
         <!-- Pokeball icon -->
         <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@
         <p>{{this.index | pokemonNumber}}</p>
     </div>
     <img [src]="this.pokemonImgSRC"
-        [alt]="this.pokemon?.name" width="60%" (error)="useDefaultImage($event)" />
+        [alt]="this.pokemon?.name" width="80%" (error)="useDefaultImage($event)" />
     <p class="name">{{this.pokemon?.name | capitalize}}</p>
     <div class="typesContainer">
         <app-type-icon *ngFor="let type of types" [type]="type" [background]="true"></app-type-icon>
