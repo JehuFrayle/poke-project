@@ -4,7 +4,7 @@
 
 .typeSelector {
     margin: 4rem 1rem;
-    background: #E6E6E6;
+    background: var(--bg);
     padding: 1rem;
     border-radius: 5px;
     width: 200px;
@@ -19,7 +19,7 @@
     p {
         margin: 0 auto;
         width: 100%;
-        color: #626262;
+        color: var(--text);
         font-size: 1.2em;
         font-weight: bold;
 
@@ -30,7 +30,8 @@
 
         svg {
             transition: all 200ms ease-in-out;
-
+            fill: none;
+            stroke: var(--text);
             &.active {
                 transform: rotate(180deg);
             }
@@ -62,7 +63,8 @@
             font-size: small;
             font-weight: bold;
 
-            color: #626262;
+            color: var(--text);
+            stroke: var(--text);
             text-decoration: none;
             height: 32px;
             border-radius: 16px;
@@ -102,7 +104,8 @@
     margin: 1rem auto;
     border-radius: 18px;
     justify-content: flex-start;
-    background-color: #E6E6E6;
+    background-color: var(--bg);
+    color: var(--text);
     filter: drop-shadow(#323232 0 0 2px);
     padding: 0 1rem;
     gap: 1rem;
@@ -110,11 +113,13 @@
     .searchIcon {
         display: inline-flex;
         cursor: pointer;
+        stroke: var(--text);
     }
 
     input[type="search"] {
         border: none;
         background: none;
+        color: inherit;
         width: 70%;
         height: 36px;
         font-family: 'Raleway', sans-serif;
@@ -131,17 +136,57 @@
 
     &:hover {
         background-color: #F6F6F6;
+        color: var(--negro-funza);
         filter: drop-shadow(#323232 0 0 4px);
+
+        .searchIcon {
+            stroke: var(--negro-funza);
+        }
     }
 
     &.active {
         background-color: #F6F6F6;
+        color: var(--negro-funza);
         filter: drop-shadow(#323232 0 0 4px);
+
+        .searchIcon {
+            stroke: var(--negro-funza);
+        }
     }
 }
 
 app-pokemon-list {
     margin-top: 4rem;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 1rem 3rem;
+
+    button {
+        margin: 0 .5rem;
+        padding: .5rem 1rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #de5c45;
+        color: #E6E6E6;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 200ms linear;
+
+        &:hover {
+            transform: scale(105%);
+            filter: drop-shadow(#E6E6E6 0 0 2px);
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 2rem 5rem;
+    }
 }
 
 .notFound {

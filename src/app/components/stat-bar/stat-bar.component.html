@@ -1,10 +1,11 @@
 <div class="statsContainer">
-    <div class="stat" *ngFor="let stat of pokemonStats">
+    <div #statContainer class="stat" *ngFor="let stat of pokemonStats">
         <p class="statName">{{stat.stat.name | stat}}</p>
         <p class="statBase"> {{stat.base_stat}}</p>
         <div class="statBar" [ngStyle]="{
                 'width': this.getWidthByValue(stat.base_stat) + '%',
-                'background-color': this.getColorByStat(stat.base_stat)
-            }"></div>
+                'background-color': this.getColor(stat.base_stat)
+            }">
+        </div>
     </div>
 </div>

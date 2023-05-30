@@ -19,12 +19,12 @@ div {
         filter: none;
 
         p {
-            color: #626262;
+            color: var(--text);
         }
     }
 }
 p {
-    color:azure;
+    color: var(--bg);
     text-decoration: none;
     border-radius: 5px;
     padding: 0 8px;

@@ -10,10 +10,10 @@
     bottom: 0;
     width: 100%;
     height: 80px;
-    background-color: #e2e2e2;
+    background-color: var(--blanco-funza);
     text-align: center;
     font-size: 0.9em;
-    color: #223;
+    color: var(--negro-funza);
     overflow-y: hidden;
 
     p {
@@ -26,7 +26,7 @@
             color: inherit;
 
             &:hover {
-                color: #de5c45;
+                color: var(--rojo-funza);
             }
         }
     }
@@ -35,5 +35,7 @@
         position: absolute;
         right: calc(50% - 50px);
         top: -50px;
+
+        fill: var(--negro-funza);
     }
 }

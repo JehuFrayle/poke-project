@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --negro-funza: #323232;
+    --gris-funza: #626262;
+    --blanco-funza: #E6E6E6;
+    --rojo-funza: #DE5C45;
+    --celeste-funza: #94CDD5;
+    --azul-funza: #52949C;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,19 +21,26 @@ html {
 
 body {
     background: rgb(50, 50, 50);
-    background: linear-gradient(180deg, rgba(50, 50, 50, 1) 0%, rgba(98, 98, 98, 1) 70%, rgba(146, 146, 146, 1) 100%);
+    background: linear-gradient(180deg, var(--bg) 0%, var(--gris-funza) 100%);
     background-attachment: fixed;
-    color: #202030;
+
+    --bg: var(--blanco-funza);
+    --text: var(--negro-funza);
+    &.dark-theme {
+        --bg: var(--negro-funza);
+        --text: var(--blanco-funza);
+    }
 }
+
 .pattern {
     position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    
-    background-color: #626262;
+
+    background-color: var(--gris-funza);
     opacity: 0.1;
-    background-image:  linear-gradient(30deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(150deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(30deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(150deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(60deg, #e6e6e677 25%, transparent 25.5%, transparent 75%, #e6e6e677 75%, #e6e6e677), linear-gradient(60deg, #e6e6e677 25%, transparent 25.5%, transparent 75%, #e6e6e677 75%, #e6e6e677);
+    background-image: linear-gradient(30deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(150deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(30deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(150deg, #e6e6e6 12%, transparent 12.5%, transparent 87%, #e6e6e6 87.5%, #e6e6e6), linear-gradient(60deg, #e6e6e677 25%, transparent 25.5%, transparent 75%, #e6e6e677 75%, #e6e6e677), linear-gradient(60deg, #e6e6e677 25%, transparent 25.5%, transparent 75%, #e6e6e677 75%, #e6e6e677);
     background-size: 80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }

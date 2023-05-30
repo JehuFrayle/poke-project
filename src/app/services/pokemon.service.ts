@@ -10,8 +10,8 @@ export class PokemonService {
 
   constructor(private http:HttpClient) { }
 
-  getPokemonList(){
-    return this.http.get<PokemonList>(`https://pokeapi.co/api/v2/pokemon`);
+  getPokemonList(offset: number = 0, limit: number = 20){
+    return this.http.get<PokemonList>(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`);
   }
   getNextPage(current:PokemonList){
     if(!current.next){

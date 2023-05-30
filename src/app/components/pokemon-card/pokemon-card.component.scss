@@ -4,7 +4,8 @@
     filter: drop-shadow(#323232 0 0 2px);
 }
 article {
-    background-color: #e6e6e6;
+    background-color: var(--bg);
+    color: var(--text);
     width: 100%;
     padding: .5rem;
     border-radius: 10px;
@@ -49,7 +50,8 @@ article {
     .numberContainer {
         display: flex;
         width: 100%;
-        background-color: #94CDD5;
+        background-color: var(--celeste-funza);
+        color: var(--negro-funza);
         font-family: 'Monda', sans-serif;
         flex-direction: row;
         justify-content: flex-start;

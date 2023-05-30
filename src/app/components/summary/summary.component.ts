@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonSpecies } from 'src/app/models/pokemon-species.model';
-import { Pokemon, Stat } from 'src/app/models/pokemon.model';
+import { Ability, Pokemon, Stat } from 'src/app/models/pokemon.model';
 import { PokemonCollectionService } from 'src/app/services/pokemon-collection.service';
 
 @Component({
@@ -21,6 +21,8 @@ export class SummaryComponent implements OnInit {
   genderRate:string[] = [];
   pokemonColor = '#94CDD5';
 
+  pokemonAbilities: Ability[] = [];
+
   ngOnInit(): void {
     this.pokemonCollection.getCurrentPokemonIsShiny().subscribe((isShiny) => {
       this.isShiny = isShiny;
@@ -35,6 +37,7 @@ export class SummaryComponent implements OnInit {
       this.pokemon = pokemon;
       this.height = pokemon.height;
       this.weight = pokemon.weight;
+      this.pokemonAbilities = pokemon.abilities;
     });
   }
 

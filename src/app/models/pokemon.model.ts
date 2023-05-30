@@ -542,10 +542,3 @@ export const IconByType = {
   steel: "assets/types-icons/steel.png",
   water: "assets/types-icons/water.png"
 }
-
-export const ColorByStat = [
-  "#515f9c", // 0 to 62
-  "#507b9d", // 63 to 94
-  "#51949c", // 95 to 126
-  "#519c73", // 127 to 255
-]
