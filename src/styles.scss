@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
+    --darker-funza: #121212;
     --negro-funza: #323232;
     --gris-funza: #626262;
     --blanco-funza: #E6E6E6;
@@ -21,7 +22,7 @@ html {
 
 body {
     background: rgb(50, 50, 50);
-    background: linear-gradient(180deg, var(--bg) 0%, var(--gris-funza) 100%);
+    background: linear-gradient(180deg, var(--blanco-funza) 0%, var(--darker-funza) 100%);
     background-attachment: fixed;
 
     --bg: var(--blanco-funza);
@@ -29,6 +30,7 @@ body {
     &.dark-theme {
         --bg: var(--negro-funza);
         --text: var(--blanco-funza);
+        background: linear-gradient(180deg, var(--negro-funza) 0%, var(--darker-funza) 100%);
     }
 }
 

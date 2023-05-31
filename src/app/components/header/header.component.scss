@@ -40,25 +40,31 @@
             }
         }
     }
-    nav {
+    .barMenu {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        margin: 1rem;
-        gap: 1rem;
-
-        a {
-            color: azure;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            filter: drop-shadow(#323232 0px 0px 2px);
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-                color: #323232;
-                filter: drop-shadow(azure 0px 0px 2px);
-                cursor: pointer;
+        
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 1rem;
+            gap: 1rem;
+    
+            a {
+                color: azure;
+                font-size: 1.2rem;
+                font-weight: 700;
+                text-decoration: none;
+                filter: drop-shadow(#323232 0px 0px 2px);
+                transition: all 0.2s ease-in-out;
+    
+                &:hover {
+                    color: #323232;
+                    filter: drop-shadow(azure 0px 0px 2px);
+                    cursor: pointer;
+                }
             }
         }
     }

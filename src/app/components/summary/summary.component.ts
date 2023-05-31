@@ -31,7 +31,11 @@ export class SummaryComponent implements OnInit {
       this.pokemonSpecies = species;
       this.genus = species.genera.filter((genus) => genus.language.name === 'en')[0].genus;
       this.genderRate = this.getGenderRate(species.gender_rate);
+
       this.pokemonColor = species.color.name;
+      if(species.color.name === 'yellow'){
+        this.pokemonColor = '#ffbb00'; //I don't like the yellow color
+      }
     });
     this.pokemonCollection.getCurrentPokemon().subscribe((pokemon) => {
       this.pokemon = pokemon;

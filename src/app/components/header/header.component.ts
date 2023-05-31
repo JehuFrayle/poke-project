@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-show = false;
-showMenu(){
-  this.show = !this.show;
-}
+  show = false;
+  showMenu() {
+    this.show = !this.show;
+  }
+  setDarkMode() {
+    document.body.classList.toggle('dark-theme');
+  }
 }

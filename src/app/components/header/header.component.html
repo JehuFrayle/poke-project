@@ -1,17 +1,20 @@
 <section class="topBar">
-    <a class="logo" routerLink="/">The Poke-Project!</a>
-    <button class="burgerBtn" (click)="showMenu()">
-        <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-            <path d="M5 17H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-            <path d="M5 7H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-    </button>
-    <nav>
-        <a routerLink="/">Home</a>
-        <a routerLink="/pokemon">Pokemon</a>
-        <a routerLink="/types">Collection</a>
-    </nav>
+    <a class="logo" routerLink="/">Pokéxplorer</a>
+    <div class="barMenu">
+        <button class="burgerBtn" (click)="showMenu()">
+            <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
+                <path d="M5 17H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
+                <path d="M5 7H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <nav>
+            <a routerLink="/">Home</a>
+            <a routerLink="/pokemon">Pokemon</a>
+            <a routerLink="/types">Collection</a>
+        </nav>
+        <button type="button" (click)="setDarkMode()">Dark mode</button>
+    </div>
 
     <svg class="pokeball" width="100px" height="100px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -25,6 +28,7 @@
             fill="#4F4F4F" fill-rule="evenodd" />
     </svg>
 </section>
+
 <div class="mobileMenu" [ngClass]="{'show': show}">
     <div class="head">
         <a routerLink="/">The Poke-Project!</a>
