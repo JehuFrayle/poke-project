@@ -13,7 +13,7 @@
             <a routerLink="/pokemon">Pokemon</a>
             <a routerLink="/types">Collection</a>
         </nav>
-        <button type="button" (click)="setDarkMode()">Dark mode</button>
+        <app-dark-mode-toggle></app-dark-mode-toggle>
     </div>
 
     <svg class="pokeball" width="100px" height="100px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,8 +30,8 @@
 </section>
 
 <div class="mobileMenu" [ngClass]="{'show': show}">
-    <div class="head">
-        <a routerLink="/">The Poke-Project!</a>
+    <div class="header">
+        <app-dark-mode-toggle></app-dark-mode-toggle>
         <button class="burgerBtn" (click)="showMenu()">
             <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 8L8 16M8.00001 8L16 16" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

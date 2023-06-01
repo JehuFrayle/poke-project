@@ -44,7 +44,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
         nav {
             display: flex;
             justify-content: space-around;
@@ -81,7 +81,7 @@
 //hide the topBar nav in mobile
 @media (max-width: 600px) {
     .topBar {
-        nav {
+        .barMenu nav, .barMenu app-dark-mode-toggle{
             display: none;
         }
     }
@@ -105,7 +105,7 @@
         &.show {
             transform: translateX(0);
         }
-        .head {
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;

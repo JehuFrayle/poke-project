@@ -22,6 +22,7 @@ import { DescriptionsComponent } from './components/descriptions/descriptions.co
 import { SummaryComponent } from './components/summary/summary.component';
 import { StatBarComponent } from './components/stat-bar/stat-bar.component';
 import { StatPipe } from './pipes/stat.pipe';
+import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { StatPipe } from './pipes/stat.pipe';
     DescriptionsComponent,
     SummaryComponent,
     StatBarComponent,
-    StatPipe
+    StatPipe,
+    DarkModeToggleComponent
   ],
   imports: [
     BrowserModule,
