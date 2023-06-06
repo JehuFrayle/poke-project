@@ -46,12 +46,8 @@ export class SummaryComponent implements OnInit {
   }
 
   setShiny() {
-    console.log(this.isShiny);
-    if(this.isShiny){
-      this.pokemonCollection.setCurrentPokemonIsShiny(false);
-      return;
-    }
-    this.pokemonCollection.setCurrentPokemonIsShiny(true);
+    const shiny = !this.isShiny;
+    this.pokemonCollection.setCurrentPokemonIsShiny(shiny);
   }
   
   getGenderRate(eight:number){

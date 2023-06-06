@@ -12,8 +12,6 @@ export class DarkModeService {
   setDarkMode(isDarkMode: boolean): void {
     localStorage.setItem('darkMode', isDarkMode ? 'true' : 'false');
     this.darkMode$.next(isDarkMode);
-
-    console.log('Dark mode set to ' + isDarkMode);
   }
   getDarkMode(): boolean {
     const darkMode = localStorage.getItem('darkMode');

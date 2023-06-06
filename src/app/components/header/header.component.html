@@ -1,16 +1,12 @@
 <section class="topBar">
-    <a class="logo" routerLink="/">Pokéxplorer</a>
+    <a class="logo" routerLink="/">VolcadeX</a>
     <div class="barMenu">
-        <button class="burgerBtn" (click)="showMenu()">
-            <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-                <path d="M5 17H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-                <path d="M5 7H20" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+        <button class="burgerBtn" (click)="showMenu()" [ngClass]="{'is-active':this.show}">
+            <span class="burger-box"></span>
         </button>
         <nav>
             <a routerLink="/">Home</a>
-            <a routerLink="/pokemon">Pokemon</a>
+            <a routerLink="/pokemon">Pokédex</a>
             <a routerLink="/types">Collection</a>
         </nav>
         <app-dark-mode-toggle></app-dark-mode-toggle>
@@ -32,16 +28,16 @@
 <div class="mobileMenu" [ngClass]="{'show': show}">
     <div class="header">
         <app-dark-mode-toggle></app-dark-mode-toggle>
-        <button class="burgerBtn" (click)="showMenu()">
+        <!-- <button class="burgerBtn" (click)="showMenu()">
             <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 8L8 16M8.00001 8L16 16" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-        </button>
+        </button> -->
     </div>
 
     <nav>
         <a routerLink="/" (click)="showMenu()">Home</a>
-        <a routerLink="/pokemon" (click)="showMenu()">Pokemon</a>
+        <a routerLink="/pokemon" (click)="showMenu()">Pokédex</a>
         <a routerLink="/types" (click)="showMenu()">Collection</a>
     </nav>
 </div>

@@ -24,6 +24,7 @@ body {
     background: rgb(50, 50, 50);
     background: linear-gradient(180deg, var(--blanco-funza) 0%, var(--darker-funza) 100%);
     background-attachment: fixed;
+    min-height: 100vh;
 
     --bg: var(--blanco-funza);
     --text: var(--negro-funza);

@@ -118,7 +118,7 @@
 
     input[type="search"] {
         border: none;
-        background: none;
+        background: transparent;
         color: inherit;
         width: 70%;
         height: 36px;
@@ -127,6 +127,10 @@
 
         &:focus {
             outline: none;
+        }
+        //remove x from edge
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
         }
     }
 

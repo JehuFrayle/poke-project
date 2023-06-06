@@ -23,7 +23,7 @@ svg.pokeballSign {
     transform: rotate(-35deg);
     transition: all 0.2s ease-in-out;
     z-index: -1;
-    stroke: var(--text);
+    stroke: white;
 }
 .shinyButton {
     background-color: transparent;
