@@ -1,0 +1,39 @@
+div {
+    width: 100%;
+    height: calc(100vh - 164px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .sign {
+        width: 100%;
+        height: fit-content;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        background-color: #F9BF3A;
+        opacity: 1;
+        background: repeating-linear-gradient( -45deg, #000000, #000000 14px, #F9BF3A 14px, #F9BF3A 70px );
+        color: var(--blanco-funza);
+        padding: .5rem 0;
+        &:hover {
+            opacity: 0.8;
+        }
+        p, h1 {
+            filter: drop-shadow(var(--negro-funza) 0 0 2px);
+            line-height: normal;
+        }
+    }
+    img {
+        width: 100%;
+        max-width: 650px;
+        height: 100%;
+        object-fit: cover;
+    }
+}
