@@ -15,6 +15,7 @@ I used a color palette based on the Pokemon Volcarona with some variations for s
 
 <img src="https://64.media.tumblr.com/tumblr_m8yvzytvqc1qmiefs.png" alt="Color palette from tumblr" style="display:block;margin: 0 auto; border-radius: 10px"></img>
 
+Almost all the web application was design by [Alezza Wolf](https://www.instagram.com/alezza_wolf/) including the illustrations fo Homepage and under construction page.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
