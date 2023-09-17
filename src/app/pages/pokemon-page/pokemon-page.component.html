@@ -34,6 +34,7 @@
     <input type="search" placeholder="Search by name"
     (focus)="searchBarToggle()" (blur)="searchBarToggle()" id="searchInput" />
 </section>
+
 <app-pokemon-list [pokemonList]="this.pokemonList"></app-pokemon-list>
 <div class="buttonsContainer" *ngIf="pages > -1">
     <button (click)="previousPage()" *ngIf="this.pages > 0">Previous page</button>

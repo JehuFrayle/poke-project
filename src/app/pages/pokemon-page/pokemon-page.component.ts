@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { debounceTime, fromEvent, map } from 'rxjs';
 import { PokemonSimplified, Type2 } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-page',
@@ -17,16 +18,33 @@ export class PokemonPageComponent implements OnInit {
   pages = -1;
 
   constructor(private pokemonService: PokemonService,
-    private title: Title) { }
+    private title: Title,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.initialPokemonList();
+    this.route.queryParams.subscribe(params => {
+      if (params['search']) {
+        this.searchTerm = params['search'];
+        this.searchPokemon();
+
+        document.querySelector('#searchInput')?.setAttribute('value', this.searchTerm);
+
+        console.log(this.searchTerm);
+      } else {
+        this.initialPokemonList();
+        console.log('no search');
+      }
+    });
+
     this.pokemonService.getAllTypes().subscribe((types) => {
       this.allTypes = types.results;
     });
 
     //toggle types if open
     if (this.showType) this.typeToggle();
+
+    //set search query
     this.setSearchQuery();
   }
 
@@ -43,6 +61,7 @@ export class PokemonPageComponent implements OnInit {
     this.title.setTitle('All pokémon');
     if (this.showType) this.typeToggle();
   }
+
   filterPokemon(type: Type2) {
     this.pokemonService.getPokemonListByType(type.name).subscribe((pokemonList) => {
       const typeName = type.name.charAt(0).toUpperCase() + type.name.slice(1);
@@ -57,6 +76,7 @@ export class PokemonPageComponent implements OnInit {
   typeToggle() {
     this.showType = !this.showType;
   }
+
   activeSearchBar = false;
   searchBarToggle() {
     this.activeSearchBar = !this.activeSearchBar;
@@ -75,14 +95,19 @@ export class PokemonPageComponent implements OnInit {
           return;
         }
         this.searchTerm = query;
-        this.searchPokemon();
+
+        if(this.searchTerm === "") {
+          this.router.navigate(['/pokemon']);
+          return;
+        }
+        this.router.navigate(['/pokemon'], { queryParams: { search: this.searchTerm } });
       });
   }
+
   searchPokemon() {
     if (this.showType) this.typeToggle()
     this.pokemonService.searchPokemonByName(this.searchTerm)
       .subscribe((results) => {
-        console.log(this.searchTerm);
         this.pokemonList = results;
         this.notFound = false;
         this.pages = -1;
@@ -106,6 +131,7 @@ export class PokemonPageComponent implements OnInit {
       }
     );
   }
+
   previousPage() {
     this.pages--;
     this.pokemonService.getPokemonList((this.pokemonList.length * this.pages)).subscribe(
@@ -116,5 +142,16 @@ export class PokemonPageComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  setSearchPage() {
+    this.route.queryParams.subscribe(params => {
+      if (params['search']) {
+        this.searchTerm = params['search'];
+        this.searchPokemon();
+
+        document.querySelector('#searchInput')?.setAttribute('value', this.searchTerm);
+      }
+    });
   }
 }
